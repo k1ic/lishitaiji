@@ -1,3 +1,8 @@
+为了解决在PC端和移动端都能自适应的问题，可以调整CSS布局，采用响应式设计的方式。使用`max-width`来控制内容宽度，在PC端呈现合理的宽度，而在移动端则保持内容的灵活性和居中显示。
+
+以下是优化后的HTML代码，添加了响应式的CSS样式：
+
+```html
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -20,6 +25,9 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px; /* 最大宽度适用于PC端 */
+            width: 100%; /* 保证在移动端占据100%宽度 */
+            margin: 20px;
         }
         h2, h3 {
             margin: 10px 0;
@@ -36,6 +44,11 @@
         }
         .link {
             margin-bottom: 15px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -230,16 +243,4 @@
                     <li>张振江</li>
                     <li>王文生</li>
                     <li>陈凯</li>
-                    <li>张占刚</li>
-                    <li>陆可心</li>
-                    <li>文清</li>
-                    <li>冯洁</li>
-                    <li>罗涛</li>
-                    <li>贾丰齐</li>
-                    <li>闫语</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</body>
-</html>
+                    <li>张占刚
